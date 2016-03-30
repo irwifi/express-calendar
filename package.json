@@ -4,6 +4,7 @@
   "description": "express middleware for Google Calendar",
   "main": "index.js",
   "scripts": {
+    "pretest": "standard",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,8 @@
     "google"
   ],
   "author": "winniehell <git@winniehell.de>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^6.0.8"
+  }
 }
