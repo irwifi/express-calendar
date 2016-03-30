@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "express-calendar-example",
+  "version": "1.0.0",
+  "description": "example for express-calendar",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "winniehell <git@winniehell.de>",
+  "license": "MIT",
+  "config": {
+    "port": "3000"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
