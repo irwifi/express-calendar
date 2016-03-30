@@ -1,0 +1,24 @@
+{
+  "name": "express-calendar",
+  "version": "1.0.0",
+  "description": "express middleware for Google Calendar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/winniehell/express-calendar"
+  },
+  "keywords": [
+    "google apis",
+    "express",
+    "calendar",
+    "client library",
+    "client",
+    "api",
+    "google"
+  ],
+  "author": "winniehell <git@winniehell.de>",
+  "license": "MIT"
+}
