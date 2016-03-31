@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "standard",
-    "test": "mocha"
+    "test": "istanbul cover _mocha"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "author": "winniehell <git@winniehell.de>",
   "license": "MIT",
   "devDependencies": {
+    "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
     "must": "^0.13.1",
     "standard": "^6.0.8",

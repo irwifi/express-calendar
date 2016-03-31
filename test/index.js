@@ -8,7 +8,7 @@ describe('express-calendar', function () {
   var app
 
   beforeEach(function () {
-    app = require('./example')
+    app = require('../example')
   })
 
   it('must respond with every event of a day', function (done) {
