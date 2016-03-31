@@ -14,6 +14,7 @@ describe('express-calendar', function () {
   it('must respond with every event of a day', function (done) {
     request(app)
       .get('/2016/04/01/')
+      .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200)
       .end(function (err, res) {
@@ -40,6 +41,7 @@ describe('express-calendar', function () {
   it('must respond with every event of a month', function (done) {
     request(app)
       .get('/2016/03/')
+      .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200)
       .end(function (err, res) {
@@ -66,6 +68,7 @@ describe('express-calendar', function () {
   it('must respond with every event of a year', function (done) {
     request(app)
       .get('/2016/')
+      .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200)
       .end(function (err, res) {

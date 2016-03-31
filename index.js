@@ -40,7 +40,26 @@ function expressCalendar (router, options) {
       }
 
       result.dateRange = [dateMin.toISOString(), dateMax.toISOString()]
-      res.json(result)
+
+      if (!options.templates) {
+        options.templates = {}
+      }
+
+      if (!options.templates.json) {
+        options.templates.json = function (result) {
+          return result
+        }
+      }
+
+      var supportedFormats = Object.keys(options.templates)
+      var formatConfig = {}
+      supportedFormats.forEach(function (formatKey) {
+        formatConfig[formatKey] = function () {
+          res.send(options.templates[formatKey](result))
+        }
+      })
+
+      res.format(formatConfig)
     })
   }
 }
