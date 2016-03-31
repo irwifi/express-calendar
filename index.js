@@ -9,9 +9,19 @@ function expressCalendar (router, options) {
 
   function expressCalendarMiddleware (req, res, next) {
     var dateString = req.params.date.replace(/\//g, '-')
-    var date = new Date(dateString)
-    options.parameters.timeMin = date.toISOString()
-    options.parameters.timeMax = new Date(date.valueOf() + 24 * 60 * 60 * 1000).toISOString()
+    var dateMin = new Date(dateString)
+    options.parameters.timeMin = dateMin.toISOString()
+
+    var dateMax = new Date(dateMin.valueOf())
+    if (dateString.length === 4) {
+      dateMax.setUTCFullYear(dateMax.getUTCFullYear() + 1)
+    } else if (dateString.length === 7) {
+      dateMax.setUTCMonth(dateMax.getUTCMonth() + 1)
+    } else {
+      dateMax.setUTCDate(dateMax.getUTCDate() + 1)
+    }
+
+    options.parameters.timeMax = dateMax.toISOString()
 
     fetchEvents(options.calendarId, options.parameters, function (err, result) {
       if (err) {
@@ -22,7 +32,7 @@ function expressCalendar (router, options) {
         res.status(result.error.code)
       }
 
-      result.date = date.toISOString()
+      result.dateRange = [dateMin.toISOString(), dateMax.toISOString()]
       res.json(result)
     })
   }
