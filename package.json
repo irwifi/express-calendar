@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "standard",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,9 @@
   "author": "winniehell <git@winniehell.de>",
   "license": "MIT",
   "devDependencies": {
-    "standard": "^6.0.8"
+    "mocha": "^2.4.5",
+    "must": "^0.13.1",
+    "standard": "^6.0.8",
+    "supertest": "^1.2.0"
   }
 }
