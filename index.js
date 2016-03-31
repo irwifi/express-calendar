@@ -9,10 +9,17 @@ function expressCalendar (router, options) {
 
   function expressCalendarMiddleware (req, res, next) {
     var dateString = req.params.date.replace(/\//g, '-')
-    var dateMin = new Date(dateString)
+    var unixDate = Date.parse(dateString)
+
+    // ignore invalid dates
+    if (isNaN(unixDate)) {
+      return next()
+    }
+
+    var dateMin = new Date(unixDate)
     options.parameters.timeMin = dateMin.toISOString()
 
-    var dateMax = new Date(dateMin.valueOf())
+    var dateMax = new Date(unixDate)
     if (dateString.length === 4) {
       dateMax.setUTCFullYear(dateMax.getUTCFullYear() + 1)
     } else if (dateString.length === 7) {

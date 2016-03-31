@@ -88,4 +88,11 @@ describe('express-calendar', function () {
         done()
       })
   })
+
+  it('must respond with 404 to invalid dates', function (done) {
+    request(app)
+      .get('/2016/00/00/')
+      .expect(404)
+      .end(done)
+  })
 })
