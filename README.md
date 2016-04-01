@@ -2,7 +2,7 @@
 
 Zero-dependency [express] middleware for [Google Calendar] (API v3)
 
-[![npm version](https://badge.fury.io/js/express-calendar.svg)]
+[![npm version](https://badge.fury.io/js/express-calendar.svg)](https://www.npmjs.com/package/express-calendar)
 
 This is meant to be a read-only proxy for the events of a publicly accessible Google Calendar.
 Currently, only API key access is supported. OAuth support is not planned.
