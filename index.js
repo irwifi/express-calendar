@@ -71,9 +71,15 @@ function fetchEvents (calendarId, parameters, callback) {
 
   var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events?' + parameterString
   https.get(url, function (calendarResponse) {
+    var responseBody = ''
+
     calendarResponse.on('data', function (responseData) {
-      var responseDataObject = JSON.parse(responseData.toString())
-      callback(null, responseDataObject)
+      responseBody += responseData
+    })
+
+    calendarResponse.on('end', function () {
+      var responseBodyObject = JSON.parse(responseBody)
+      callback(null, responseBodyObject)
     })
   }).on('error', function (e) {
     callback(e)
