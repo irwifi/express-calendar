@@ -1,6 +1,6 @@
 {
   "name": "express-calendar",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "express middleware for Google Calendar",
   "main": "index.js",
   "scripts": {
