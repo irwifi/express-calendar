@@ -10,10 +10,8 @@
   },
   "author": "winniehell <git@winniehell.de>",
   "license": "MIT",
-  "config": {
-    "port": "3000"
-  },
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "rc": "^1.1.6"
   }
 }

@@ -1,5 +1,6 @@
 var app = require('.')
-var port = process.env.npm_package_config_port
-app.listen(port, function () {
-  console.log('Running example on port ' + port + ' ...')
+var config = require('./config')
+
+app.listen(config.port, config.hostname, function () {
+  console.log('Running example on http://' + config.hostname + ':' + config.port + ' ...')
 })

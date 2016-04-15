@@ -1,6 +1,21 @@
+var config = require('./config')
 var express = require('express')
 var expressCalendar = require('..')
-var options = require('./options.local.json')
+
+var options = {
+  calendarId: config.googleapis.calendar.v3.calendarId,
+  parameters: {
+    key: config.googleapis.auth.apiKey
+  }
+}
+
+if (!options.parameters.key) {
+  throw new Error('Missing Google API key!')
+}
+
+if (!options.calendarId) {
+  throw new Error('Missing calendarId!')
+}
 
 options.parameters.fields = ['items/summary', 'items/id'].join(',')
 options.templates = {
