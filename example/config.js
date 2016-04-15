@@ -1,6 +1,6 @@
 var rc = require('rc')
 
-module.exports = rc('express-calendar', {
+module.exports = rc('express-calendar-example', {
   googleapis: rc('googleapis', {
     auth: {
       apiKey: undefined
